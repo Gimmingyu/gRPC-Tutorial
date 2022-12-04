@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "/multiply";
+
+package multiply;
+
+service Multiplier {
+  rpc Mul(MulReq) returns (MulRes) {}
+}
+
+message MulReq {
+  string x =1;
+}
+
+message MulRes {
+  string result = 1;
+}
+
