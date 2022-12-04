@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = ".";
+
+package find;
+
+message corgiFindRequest {
+  float latitude = 1; 
+  float longitude = 2;
+  enum Place {
+    ATTRACTIONS = 0;
+    RESTAURANT = 1;
+    TOILET = 2;
+    ATM = 3;
+    HOTEL = 4;
+  }
+  Place place = 3;
+
+  message Result {
+    string title = 1;
+    string url = 2;
+    string category = 3;
+  }
+  repeated Result results = 4;
+}
